@@ -8,10 +8,6 @@ let operatorButtons = document.querySelectorAll('.operator');
 let decimalButton = document.querySelector('.decimal');
 let equalsButton = document.querySelector('.equals');
 
-//Additional Buttons
-let factorialButton = document.querySelector('.factorial');
-let powerButton = document.querySelector('power');
-
 //variables
 let previousNumber = "";
 let currentNumber = "";
@@ -29,7 +25,7 @@ let parsedResult;
 for(let i = 0; i < LengthOfNumberButtons; i++)
 {
   numberButtons[i].addEventListener("click", () => {
-   console.log(numberHandler(numberButtons[i].innerHTML));
+   numberHandler(numberButtons[i].innerHTML);
    currentScreen.textContent = currentNumber;
   })
 }
@@ -39,9 +35,10 @@ for(let i = 0; i < LengthofOperatorButtons; i++)
 {
   operatorButtons[i].addEventListener("click", () => {
   
-    console.log("Result before if: " + result);
+
     if (result !== "")
     {
+    operatorHandler(operatorButtons[i].innerHTML);
     currentNumber = "";
     currentScreen.textContent = currentNumber;
     previousNumber = result;
@@ -49,7 +46,8 @@ for(let i = 0; i < LengthofOperatorButtons; i++)
 
     }
 
-    else {
+    else 
+    {
     console.log(operatorButtons[i].innerHTML);
     operatorHandler(operatorButtons[i].innerHTML);
     currentScreen.textContent = operator;
@@ -58,8 +56,7 @@ for(let i = 0; i < LengthofOperatorButtons; i++)
     currentNumber = "";
     currentScreen.textContent = currentNumber;
     currentNumber = currentScreen.textContent;
-    console.log("Previous Number in Operators: " + previousNumber);
-    console.log("Current Number in Operators: " + currentNumber);
+
     }
 
   })
@@ -67,20 +64,21 @@ for(let i = 0; i < LengthofOperatorButtons; i++)
 
 //Clicking of Equals Button
 equalsButton.addEventListener("click", () => {
-    console.log("Current Number: " + currentNumber);
-    console.log("Previous Number: " + previousNumber);
 
+    console.log("Operator: " + operator);
+    console.log("Previous Number: " + previousNumber);
+    console.log("Current Number: " + currentNumber);
     parsedCurrentNumber = parseInt(currentNumber); 
     parsedPreviousNumber = parseInt(previousNumber);
     parsedResult = parsedPreviousNumber + parsedCurrentNumber;
-    console.log("Sum in equals: " + parsedResult);
-    result = parsedResult.toString();
-    console.log("Result in equals: " + result);
+
+    result = operate(parsedPreviousNumber, parsedCurrentNumber, operator);
+    
+    console.log(result);
     previousScreen.textContent = previousNumber + " " + operator + " " + currentNumber;
     currentScreen.textContent = result;
     previousNumber = result;
-    console.log("Previous number in equals: " + previousNumber);
-    console.log("Current number now in equals: " + currentNumber);
+
 })
 
 
@@ -107,4 +105,28 @@ function stringToInteger(num)
 function displayNumber(screen1)
 {
  return screen1.textcontent = num1;
+}
+
+//Operate Function
+function operate(num1, num2, opr)
+{
+  if(opr == '+')
+  return num1 + num2;
+  if(opr == '-')
+  return num1 - num2;
+  if(opr == '*')
+  return num1 * num2;
+  if(opr == '/')
+  {
+    if (num2 == 0)
+    return "lol";
+    else 
+    return num1/num2;
+  }
+  if(opr == '^')
+    return Math.pow(num1,num2);
+  if(opr == "x!")
+    {
+      return "lmao";
+    }
 }
