@@ -1,0 +1,77 @@
+.container{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.calculator
+{
+  border: 1px solid black;
+  padding: 2rem;
+  height: 350px;
+}
+
+.buttons
+{
+  display: grid;
+  grid-template-columns: 30px 30px 30px 30px;
+  grid-gap: 5px;
+  font-size: 1rem;
+}
+
+.screen-container
+{
+  width: 50%px;
+  height: 100px;
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0px;
+}
+
+.brand
+{
+  width: 180px;
+  font-size: 0.5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.button-container
+{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 150px;
+}
+
+.number
+{
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+#screen
+{
+  border: 1px solid red;
+  padding: 5px;
+  width: 174px;
+  height: 80px;
+}
+
+.previous-screen
+{
+  border: 1px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 20px;
+}
+
+.current-screen
+{
+  border: 1px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 20px;
+}
