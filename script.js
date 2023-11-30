@@ -25,6 +25,7 @@ let parsedCurrentNumber;
 let parsedPreviousNumber;
 let parsedResult;
 
+
 //Clicking of Number Buttons
 for(let i = 0; i < LengthOfNumberButtons; i++)
 {
@@ -97,7 +98,24 @@ allClearButton.addEventListener("click", () => {
 
 //Clicking of Clear Button (C)
 clearButton.addEventListener("click", () => {
-  console.log("I'm working!");
+  
+  if(currentNumber !== "")
+  {
+  currentNumber = clearChar(currentNumber);
+  currentScreen.textContent = currentNumber;
+  }
+
+  if(operator !== "")
+  {
+    operator = clearChar(operator);
+    previousScreen.textContent = previousNumber + operator;
+  }
+
+  if(currentNumber == "")
+  {
+  previousNumber = clearChar(previousNumber);
+  previousScreen.textContent = previousNumber + operator;
+  }
 })
 
 //Functions
@@ -114,10 +132,11 @@ function operatorHandler(opr)
   return operator = opr;
 }
 
-//Display Number
-function displayNumber(screen1)
+//Clear Function
+function clearChar(str)
 {
- return screen1.textcontent = num1;
+  str = str.substring(0, str.length - 1);
+  return str;
 }
 
 //Factorial function
