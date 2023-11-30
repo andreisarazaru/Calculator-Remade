@@ -8,6 +8,10 @@ let operatorButtons = document.querySelectorAll('.operator');
 let decimalButton = document.querySelector('.decimal');
 let equalsButton = document.querySelector('.equals');
 
+//Clear Buttons
+let allClearButton = document.querySelector('.all-clear');
+let clearButton = document.querySelector('.clear');
+
 //variables
 let previousNumber = "";
 let currentNumber = "";
@@ -67,8 +71,8 @@ equalsButton.addEventListener("click", () => {
     console.log("Operator: " + operator);
     console.log("Previous Number: " + previousNumber);
     console.log("Current Number: " + currentNumber);
-    parsedCurrentNumber = parseInt(currentNumber); 
-    parsedPreviousNumber = parseInt(previousNumber);
+    parsedCurrentNumber = parseFloat(currentNumber); 
+    parsedPreviousNumber = parseFloat(previousNumber);
     parsedResult = parsedPreviousNumber + parsedCurrentNumber;
 
     result = operate(parsedPreviousNumber, parsedCurrentNumber, operator);
@@ -80,6 +84,23 @@ equalsButton.addEventListener("click", () => {
 
 })
 
+//Clicking of All Clear (AC) Button
+allClearButton.addEventListener("click", () => {
+  currentScreen.textContent = " ";
+  previousScreen.textContent = " ";
+  result = "";
+  currentNumber = "";
+  previousNumber = "";
+  operator = "";
+
+})
+
+//Clicking of Clear Button (C)
+clearButton.addEventListener("click", () => {
+  console.log("I'm working!");
+})
+
+//Functions
 
 //Number Handling
 function numberHandler(num1)
@@ -91,13 +112,6 @@ function numberHandler(num1)
 function operatorHandler(opr)
 {
   return operator = opr;
-}
-
-//Converting string to integer 
-function stringToInteger(num)
-{
-  num = parseInt(num);
-  return num; 
 }
 
 //Display Number
