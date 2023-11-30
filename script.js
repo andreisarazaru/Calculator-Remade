@@ -1,6 +1,7 @@
 //Screen
 let previousScreen = document.querySelector('.previous-screen');
 let currentScreen = document.querySelector('.current-screen');
+let startScreen = document.querySelector('.start-screen');
 
 //Buttons
 let numberButtons = document.querySelectorAll('.number');
@@ -24,7 +25,6 @@ let LengthofOperatorButtons = operatorButtons.length;
 let parsedCurrentNumber;
 let parsedPreviousNumber;
 let parsedResult;
-
 
 //Clicking of Number Buttons
 for(let i = 0; i < LengthOfNumberButtons; i++)
@@ -98,7 +98,7 @@ allClearButton.addEventListener("click", () => {
 
 //Clicking of Clear Button (C)
 clearButton.addEventListener("click", () => {
-  
+
   if(currentNumber !== "")
   {
   currentNumber = clearChar(currentNumber);
