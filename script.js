@@ -43,7 +43,6 @@ for(let i = 0; i < LengthofOperatorButtons; i++)
     currentScreen.textContent = currentNumber;
     previousNumber = result;
     previousScreen.textContent = previousNumber + " " + operator;
-
     }
 
     else 
@@ -107,6 +106,17 @@ function displayNumber(screen1)
  return screen1.textcontent = num1;
 }
 
+//Factorial function
+function findFactorial(num)
+{
+  let factorial = 1;
+  for(let i = 1; i <= num; i++)
+  {
+    factorial = factorial * i;
+  }
+  return factorial;
+}
+
 //Operate Function
 function operate(num1, num2, opr)
 {
@@ -118,7 +128,7 @@ function operate(num1, num2, opr)
   return num1 * num2;
   if(opr == '/')
   {
-    if (num2 == 0)
+    if (num1 == 0 || num2 == 0)
     return "lol";
     else 
     return num1/num2;
@@ -127,6 +137,6 @@ function operate(num1, num2, opr)
     return Math.pow(num1,num2);
   if(opr == "x!")
     {
-      return "lmao";
+      return findFactorial(num1);
     }
 }
