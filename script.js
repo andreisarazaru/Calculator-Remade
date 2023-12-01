@@ -4,14 +4,14 @@ let currentScreen = document.querySelector('.current-screen');
 let startScreen = document.querySelector('.start-screen');
 
 //Buttons
-let numberButtons = document.querySelectorAll('.number');
-let operatorButtons = document.querySelectorAll('.operator');
-let decimalButton = document.querySelector('.decimal');
-let equalsButton = document.querySelector('.equals');
+let numberButtons = document.querySelectorAll('.number-button');
+let operatorButtons = document.querySelectorAll('.operator-button');
+let decimalButton = document.querySelector('.decimal-button');
+let equalsButton = document.querySelector('.equals-button');
 
 //Clear Buttons
-let allClearButton = document.querySelector('.all-clear');
-let clearButton = document.querySelector('.clear');
+let allClearButton = document.querySelector('.all-clear-button');
+let clearButton = document.querySelector('.clear-button');
 
 //variables
 let previousNumber = "";
